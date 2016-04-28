@@ -31,14 +31,15 @@ function FM (){
 clear
 while true; do
 
-#echo -e "\n"
+
 echo "--------------------"
 echo -e "\e[1;4mBanda FM sintonizada\e[0m"
 echo "--------------------"
 
 read -p " 
 Seleccione: 
-1) Vorterix		2) La 100		3) Aspen		4) La Tribu
+1) La Tribu 88.7	2) Vorterix 92.1	3) Metro 95.1		4) Rock & Pop 95.9	5) La 100 99.9
+6) Aspen 102.3		7) RQP 104.3		8) ESPN 107.9	
 
 
 				«« s) Detener reproducción   b) Cambiar banda   x) Apagar radio »»
@@ -46,37 +47,85 @@ Seleccione:
 " estacion 
 
 case $estacion in
-                1)       
+            1)       
+				#La Tribu
+		    killall mplayer
+		    clear
+		    echo -e "\n"
+		    nohup mplayer http://vivo.fmlatribu.com:8000/latribu.mp3 > /dev/null 2>&1 &
+                    echo -e "Reproduciendo \e[1;4mLa Tribu 88.7 FM\e[0m"
+		    echo -e "\n"
+		    ;;
+     		2)  
      		    #Vorterix
+		    killall mplayer
+		    clear
 		    echo -e "\n"
 		    nohup mplayer rtsp://r20057.smi.vmf.edge-apps.net/magma-apps/vorterix_radio1_high > /dev/null 2>&1 &
                     echo -e "Reproduciendo \e[1;4mVorterix Rock 92.1 FM\e[0m"
 		    echo -e "\n"
 		    ;;
-     		2)  #La 100
+
+     		3)  
+				#Metro
+		    killall mplayer
+		    clear
 		    echo -e "\n"
-		    nohup http://buecrplb01.cienradios.com.ar/la100.mp3 > /dev/null 2>&1 &
+		    nohup mplayer http://mp3.metroaudio1.stream.avstreaming.net:7200/metro > /dev/null 2>&1 &
+                    echo -e "Reproduciendo \e[1;4mMetro 95.1 FM\e[0m"
+		    echo -e "\n"
+		    ;;
+
+     		4)  
+				#Rock and Pop
+		    killall mplayer
+		    clear
+		    echo -e "\n"
+		    nohup mplayer http://server4.stweb.tv/rockpop/live/playlist.m3u8 > /dev/null 2>&1 &
+                    echo -e "Reproduciendo \e[1;4mRock & Pop 95.9 FM\e[0m"
+		    echo -e "\n"
+		    ;;
+
+     		5)  
+				#La 100
+		    killall mplayer
+		    clear
+		    echo -e "\n"
+		    nohup mplayer http://buecrplb01.cienradios.com.ar/la100.mp3 > /dev/null 2>&1 &
                     echo -e "Reproduciendo \e[1;4mLa 100 99.9 FM\e[0m"
 		    echo -e "\n"
 		    ;;
-     		3)  #Aspen
+
+     		6)  
+				#Aspen
+		    killall mplayer
+		    clear
 		    echo -e "\n"
-		    nohup http://201.212.5.144/aspen > /dev/null 2>&1 &
+		    nohup mplayer http://201.212.5.144/aspen > /dev/null 2>&1 &
                     echo -e "Reproduciendo \e[1;4mAspen 102.3 FM\e[0m"
 		    echo -e "\n"
 		    ;;
-     		4)  #La Tribu
+     		7)  
+				#RQP
+		    killall mplayer
+		    clear
 		    echo -e "\n"
-		    nohup http://vivo.fmlatribu.com:8000/latribu.mp3 > /dev/null 2>&1 &
-                    echo -e "Reproduciendo \e[1;4mLa Tribu 88.7 FM\e[0m"
+		    nohup mplayer rtsp://server5.stweb.tv/RQP/live > /dev/null 2>&1 &
+                    echo -e "Reproduciendo \e[1;4mRQP 104.3 FM\e[0m"
+		    echo -e "\n"
+		    ;;
+     		8)  
+				#ESPN
+		    killall mplayer
+		    clear
+		    echo -e "\n"
+		    nohup mplayer http://espnsslarugby-i.akamaihd.net/hls/live/225068/rugbytest/64/64.m3u8 > /dev/null 2>&1 &
+                    echo -e "Reproduciendo \e[1;4mESPN 107.9 FM\e[0m"
 		    echo -e "\n"
 		    ;;
                 s)       
-     		    killall mplayer
-		    echo -e "\n\n-----------------------"
-		    echo -e "|Reproducción detenida|"
-		    echo -e "-----------------------\n\n"
-                    ;;
+                    parar
+		    ;;
                 b)  
 		    sintonia
 		    ;;
@@ -101,7 +150,8 @@ echo "--------------------"
 read -p "
 
 Seleccione: 
-1) Radio Mitre		
+1) Radio Continental		2) Radio Rivadavia			3) Radio 10
+4) Radio Mitre			5) Radio Belgrano			6) Radio Del Plata
 
 
 				«« s) Detener reproducción   b) Cambiar banda   x) Apagar radio »»
@@ -110,17 +160,61 @@ Seleccione:
 
 case $estacion in
                 1)
+                    #Continental
+		    killall mplayer
+		    clear
+		    echo -e "\n"
+                    nohup mplayer http://7309.live.streamtheworld.com:443/CONTINENTALAAC_SC > /dev/null 2>&1 &
+                    echo -e "Reproduciendo \e[1;4mRadio Continental AM 590\e[0m"
+		    echo -e "\n"
+                    ;;
+                2)
+                    #Rivadavia
+		    killall mplayer
+		    clear
+		    echo -e "\n"
+                    nohup mplayer http://190.104.220.205:8234/stream > /dev/null 2>&1 &
+                    echo -e "Reproduciendo \e[1;4mRadio Rivadavia AM 630\e[0m"
+		    echo -e "\n"
+                    ;;
+                3)
+                    #Radio10
+		    killall mplayer
+		    clear
+		    echo -e "\n"
+                    nohup mplayer rtmp://radio10.stweb.tv/radio10/live > /dev/null 2>&1 &
+                    echo -e "Reproduciendo \e[1;4mRadio 10 AM 710\e[0m"
+		    echo -e "\n"
+                    ;;
+                4)
                     #Radio Mitre
+		    killall mplayer
+		    clear
 		    echo -e "\n"
                     nohup mplayer http://buecrplb01.cienradios.com.ar/Mitre790.aac > /dev/null 2>&1 &
                     echo -e "Reproduciendo \e[1;4mRadio Mitre AM 790\e[0m"
 		    echo -e "\n"
                     ;;
+                5)
+                    #Belgrano
+		    killall mplayer
+		    clear
+		    echo -e "\n"
+                    nohup mplayer http://streamlky.alsolnet.com:443/radio9 > /dev/null 2>&1 &
+                    echo -e "Reproduciendo \e[1;4mRadio Belgrano AM 950\e[0m"
+		    echo -e "\n"
+                    ;;
+                6)
+                    #Del Plata
+		    killall mplayer
+		    clear
+		    echo -e "\n"
+                    nohup mplayer http://lsddelplatahls-lh.akamaihd.net/i/amdelplataHLS_1@126173/master.m3u8 > /dev/null 2>&1 &
+                    echo -e "Reproduciendo \e[1;4mRadio Del Plata AM 1030\e[0m"
+		    echo -e "\n"
+                    ;;
                 s)
-                    killall mplayer
-                    echo -e "\n\n-----------------------"
-                    echo -e "|Reproducción detenida|"
-                    echo -e "-----------------------\n\n"
+		    parar
                     ;;
                 b)  sintonia
 		    echo -e "\n\nBanda FM Sintonizada\n\n"
@@ -157,16 +251,15 @@ Seleccione:
 case $estacion in
                 1)       
      		    #Spoon Radio
+                    killall mplayer
+                    clear
 		    echo -e "\n"
-		    nohup http://spoonradio.ice.infomaniak.ch:80/spoonradio-high > /dev/null 2>&1 &
+		    nohup mplayer http://spoonradio.ice.infomaniak.ch:80/spoonradio-high > /dev/null 2>&1 &
                     echo -e "Reproduciendo \e[1;4mSpoon Radio Rock\e[0m"
 		    echo -e "\n"
 		    ;;
                 s)       
-     		    killall mplayer
-		    echo -e "\n\n-----------------------"
-		    echo -e "|Reproducción detenida|"
-		    echo -e "-----------------------\n\n"
+		    parar
                     ;;
                 b)  
 		    sintonia
@@ -182,8 +275,18 @@ done
 
 function x (){
 echo -e "\n\nGracias por usar la radio\n\n"
+killall mplayer > /dev/null 2>&1 
 exit 0
 }
+
+function parar (){
+killall mplayer
+clear
+echo -e "\n-----------------------"
+echo -e "\e[1;4mReproducción detenida\e[0m"
+echo -e "-----------------------\n"
+}
+
 
 clear
 sintonia
