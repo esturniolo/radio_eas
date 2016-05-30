@@ -123,6 +123,15 @@ case $estacion in
                     echo -e "Reproduciendo \e[1;4mESPN 107.9 FM\e[0m"
 		    echo -e "\n"
 		    ;;
+                9)
+                                #Nacional Rock
+                    killall mplayer
+                    clear
+                    echo -e "\n"
+                    nohup mplayer rtmp://186.33.227.194/rn_sc_rad39/rn_sc_rad39.stream > /dev/null 2>&1 &
+                    echo -e "Reproduciendo \e[1;4mNacional Rock 93.7 FM\e[0m"
+                    echo -e "\n"
+                    ;;
                 s)       
                     parar
 		    ;;
