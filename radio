@@ -124,11 +124,11 @@ case $estacion in
 		    echo -e "\n"
 		    ;;
                 9)
-                                #Nacional Rock
+                                #Nacional Rock - Stream anterior: rtmp://186.33.227.194/rn_sc_rad39/rn_sc_rad39.stream
                     killall mplayer
                     clear
                     echo -e "\n"
-                    nohup mplayer rtmp://186.33.227.194/rn_sc_rad39/rn_sc_rad39.stream > /dev/null 2>&1 &
+                    nohup mplayer http://icecast01.dcarsat.com.ar:8000/sc_rad39 > /dev/null 2>&1 &
                     echo -e "Reproduciendo \e[1;4mNacional Rock 93.7 FM\e[0m"
                     echo -e "\n"
                     ;;
